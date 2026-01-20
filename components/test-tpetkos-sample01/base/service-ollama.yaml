@@ -1,0 +1,20 @@
+# Ollama Server Service
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app.kubernetes.io/instance: test-tpetkos-sample01-ollama
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: test-tpetkos-sample01-ollama
+    app.kubernetes.io/part-of: test-tpetkos-sample01
+    app.kubernetes.io/component: ollama
+  name: test-tpetkos-sample01-ollama
+spec:
+  ports:
+    - name: http
+      port: 11434
+      protocol: TCP
+      targetPort: 11434
+  selector:
+    app.kubernetes.io/instance: test-tpetkos-sample01-ollama
+  type: ClusterIP

@@ -1,0 +1,10 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+commonLabels:
+  rhtap/gitops: test-tpetkos-sample01
+  janus-idp.io/tekton: test-tpetkos-sample01
+  backstage.io/kubernetes-id: test-tpetkos-sample01
+  backstage.io/kubernetes-namespace: rhdh-app
+  app.kubernetes.io/part-of: test-tpetkos-sample01
+resources:
+  - application-dev.yaml

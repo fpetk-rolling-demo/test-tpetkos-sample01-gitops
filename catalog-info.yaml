@@ -1,0 +1,23 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: test-tpetkos-sample01-gitops
+  description: GitOps manifest for Llama Stack Agentic - test-tpetkos-sample01   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:
+    # ArgoCD apps from this template used rhtap-gitops as the grouping
+    argocd/app-selector: rhtap/gitops=test-tpetkos-sample01
+    janus-idp.io/tekton: test-tpetkos-sample01 
+    backstage.io/kubernetes-id: test-tpetkos-sample01 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:default/theofanispetkos 
+  lifecycle: experimental
+  dependsOn:
+    - component:test-tpetkos-sample01  
+
